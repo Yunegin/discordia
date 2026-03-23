@@ -69,7 +69,7 @@ export default function App() {
     setUsingToken(true);
     const now = new Date().toLocaleString("pt-BR");
     const entry = { id: Date.now(), time: now, totalAt: data.total, tokenUsed: true };
-    const newData = { ...data, rafaTokens: data.rafaTokens - 1, history: [entry, ...(data.history || [])].slice(0, 50) };
+    const newData = { ...data, rafaTokens: data.rafaTokens - 1, currentCycle: 0, history: ...
     await save(newData);
     setUsingToken(false);
     setTokenUsed(true);
